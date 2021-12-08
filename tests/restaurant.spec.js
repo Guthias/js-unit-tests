@@ -78,7 +78,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // chaves são somente `food` e `drink`, 
     // --------------------------------------------------------------------------------------
     
-    expect(Object.keys(createMenu({ food: {}, drink: {} })).fetchMenu()).toBe(['food', 'drink']);
+    expect(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu())).toStrictEqual(['food', 'drink']);
     
     // --------------------------------------------------------------------------------------
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu 
