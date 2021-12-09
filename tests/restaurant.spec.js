@@ -110,6 +110,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     menu.order('agua');
     menu.order('sopa');
     menu.order('sashimi');
-    expect(menu.pay()).toBe(32.45);
+    expect(menu.pay()).toStrictEqual(32.45);
   });
 });

@@ -98,10 +98,22 @@ const createMenu = (obj) => ({
   order(item) {
     this.consumption.push(item);
   },
+  pay() {
+    const lint = {};
+    const allProducts = Object.assign(lint, this.menu.food, this.menu.drink);
+    let price = 0;
+    for (let i = 0; i < this.consumption.length; i += 1) {
+      price += allProducts[this.consumption[i]].price;
+    }
+    return parseFloat(((price / 100) * 110).toFixed(2));
+  },
 });
 
 const menu = createMenu(testMenu);
 menu.order('coxinha');
-console.log(menu.consumption);
+menu.order('agua');
+menu.order('sopa');
+menu.order('sashimi');
+console.log(menu.pay());
 
 module.exports = createMenu;
