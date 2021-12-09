@@ -79,18 +79,6 @@
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const testMenu = {
-  food: {
-    coxinha: {
-      price: 5 },
-    sashimi: {
-      price: 14.3 },
-    sopa: {
-      price: 8.2 } },
-  drink: {
-    agua: {
-      price: 2 } } };
-
 const createMenu = (obj) => ({    
   menu: obj,
   consumption: [],
@@ -108,12 +96,5 @@ const createMenu = (obj) => ({
     return parseFloat(((price / 100) * 110).toFixed(2));
   },
 });
-
-const menu = createMenu(testMenu);
-menu.order('coxinha');
-menu.order('agua');
-menu.order('sopa');
-menu.order('sashimi');
-console.log(menu.pay());
 
 module.exports = createMenu;
