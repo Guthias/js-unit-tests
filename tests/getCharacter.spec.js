@@ -40,6 +40,23 @@ Retorno:
   phrases: [ 'Not today', 'A girl has no name.' ]
 }
 */
+const arya = {
+  name: 'Arya Stark',
+  class: 'Rogue',
+  phrases: ['Not today', 'A girl has no name.']
+};
+
+const brienne = {
+  name: 'Brienne Tarth',
+  class: 'Knight',
+  phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.']
+}
+
+const melissandre = {
+  name: 'Melissandre',
+  class: 'Necromancer',
+  phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']
+}
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it ('Teste se a função, quando não recebe nenhum parâmetro, retorna undefined', () => {
@@ -47,9 +64,9 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   });
 
   it ('Retornar o Objeto correto ao receber os parametros', () => {
-    expect(getCharacter('Arya')).toStrictEqual({name: 'Arya Stark', class: 'Rogue', phrases: ['Not today', 'A girl has no name.']});
-    expect(getCharacter('Brienne')).toStrictEqual({name: 'Brienne Tarth', class: 'Knight', phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.']});
-    expect(getCharacter('Melissandre')).toStrictEqual({name: 'Melissandre', class: 'Necromancer', phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']});
+    expect(getCharacter('Arya')).toStrictEqual(arya);
+    expect(getCharacter('Brienne')).toStrictEqual(brienne);
+    expect(getCharacter('Melissandre')).toStrictEqual(melissandre);
   });
 
   it('Verifica se os parâmetros são Case Sensitive', () => {
