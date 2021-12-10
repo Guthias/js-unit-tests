@@ -63,17 +63,22 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
       }
     }
   };
+
+  const emptyMenu = {
+    food: {},
+    drink: {}
+  };
+  
   it('Verifique se o retorno da função createMenu() é um objeto que possui a chave fetchMenu, a qual tem como valor uma função.', () => {
     expect(typeof createMenu().fetchMenu).toBe('function');
   });
 
   it ('Verifique se objetoRetornado.fetchMenu() retorna um objeto cujas chaves são somente `food` e `drink`', () => {
-    expect(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu())).toStrictEqual(['food', 'drink']);
+    expect(Object.keys(createMenu(emptyMenu).fetchMenu())).toStrictEqual(['food', 'drink']);
   });
   
   it ('Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função objetoRetornado.fetchMenu', () => {
-    const objectTest3 = { food: {}, drink: {} };
-    expect(createMenu(objectTest3).fetchMenu()).toStrictEqual(objectTest3);
+    expect(createMenu(emptyMenu).fetchMenu()).toStrictEqual(emptyMenu);
   });
   
   it ('Verifique se objetoRetornado.consumption, após a criação do menu, retorna um array vazio.', () => {
