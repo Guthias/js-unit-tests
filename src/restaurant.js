@@ -87,8 +87,7 @@ const createMenu = (obj) => ({
     this.consumption.push(item);
   },
   pay() {
-    const lint = {};
-    const allProducts = Object.assign(lint, this.menu.food, this.menu.drink);
+    const allProducts = Object.assign(this.menu.food, this.menu.drink);
     let price = 0;
     for (let i = 0; i < this.consumption.length; i += 1) {
       price += allProducts[this.consumption[i]].price;
